@@ -1,6 +1,17 @@
 import sys
 import json
 import os
+import re
+
+
+class ScriptInfo:
+    def __init__(self, name, description, api, icon, tags, path):
+        self.name = name
+        self.description = description
+        self.api = api
+        self.icon = icon
+        self.tags = tags
+        self.path = path
 
 
 class ResultItem:
@@ -44,8 +55,34 @@ class ResultItem:
         return {k: v for k, v in item_dict.items() if v is not None}
 
 
+def extract_script_info(file_path):
+    """Extract metadata from the header of a .js file."""
+    with open(file_path, "r", encoding="utf-8") as file:
+        content = file.read()
+
+    # Match the JSON header block
+    match = re.search(r"/\*\*(.*?)\*\*/", content, re.DOTALL)
+    if match:
+        header_content = match.group(1).strip()
+        try:
+            # Parse the JSON from the header
+            metadata = json.loads(header_content)
+            return ScriptInfo(
+                name=metadata.get("name", "Unknown"),
+                description=metadata.get("description", ""),
+                api=metadata.get("api", 0),
+                icon=metadata.get("icon", "default"),
+                tags=metadata.get("tags", ""),
+                path=file_path
+            )
+        except json.JSONDecodeError:
+            # print(f"Failed to parse JSON header in {file_path}")
+            pass
+    return None
+
+
 def get_js_files(directory):
-    # Get all `.js` files in the specified directory, one level deep
+    """Get all .js files in the specified directory, one level deep."""
     return [
         os.path.join(directory, f)
         for f in os.listdir(directory)
@@ -60,12 +97,16 @@ def main(query):
     # Get all .js files in the scripts directory
     js_files = get_js_files(scripts_directory)
 
-    # Create ResultItems for each .js file that matches the query
+    # Extract script info and filter by query
     for js_file in js_files:
-        title = os.path.basename(js_file)  # File name only
-        if query.lower() in title.lower():  # Case-insensitive query filtering
-            arg = js_file  # Full path
-            result_item = ResultItem(title=title, arg=arg)
+        script_info = extract_script_info(js_file)
+        if script_info and query.lower() in script_info.name.lower():
+            result_item = ResultItem(
+                title=script_info.name,
+                arg=script_info.path,
+                subtitle=script_info.tags,
+                # icon_path=f"icons/{script_info.icon}.png" if script_info.icon else None
+            )
             output["items"].append(result_item.to_dict())
 
     # Add the input query to variables
