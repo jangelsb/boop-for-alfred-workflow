@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jangelsb.textactions</string>
+	<string>com.jangelsb.boop</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -51,13 +51,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Josh Angelsberg</string>
+	<string>Josh Angelsberg &amp; Ivan Mathy</string>
 	<key>description</key>
 	<string>The ability to run text actions</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>TextActions</string>
+	<string>Boop</string>
 	<key>objects</key>
 	<array>
 		<dict>
