@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jangelsb.autotagger</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>C54C778B-7BD5-4488-8CB6-17E5E559AFD0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A13CB0BF-828B-4D76-8461-15D0AAB4EC1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Josh Angelsberg</string>
+	<key>description</key>
+	<string>The ability to auto tag items and add them via a URL scheme</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AutoTagger</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>3</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:input_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python3 process_url_script_filter.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>AutoTagger</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C54C778B-7BD5-4488-8CB6-17E5E559AFD0</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A13CB0BF-828B-4D76-8461-15D0AAB4EC1C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># AutoTagger
+
+For more info check out the repo: https://github.com/jangelsb/auto-tagger-alfred-workflow
+
+## 📖 Installation
+
+### Step 1: Set up your Tags
+```yaml
+work 📁:
+  - work
+  - ios
+  - pr
+
+review 👀:
+  - pr
+  - doc
+  - review
+
+Card 💡:
+  - create card
+
+Important 🔺:
+  - '!!'
+
+```
+
+### Step 2: Set up your URL Schemes
+```yaml
+- title: "Add to inbox 📥" 
+  url: sorted://x-callback-url/add?title=[query]&amp;tags=[tags]&amp;date=[today]
+
+- title: "Add to admin 📁" 
+  url: sorted://x-callback-url/add?title=[query]&amp;tags=[tags]&amp;date=[today]&amp;list=%F0%9F%93%81%20Admin
+
+- title: "Search in Sorted³"
+  url: sorted://x-callback-url/open?search=[query]
+  icon: search.png
+
+```
+
+**Dyanmic variables:**
+- `[query]`
+- `[tags]`
+- `[today]`
+
+**Built in icons:**
+- `tags.png`
+- `search.png`
+
+---
+
+## 📝 Version History
+
+#### v2025.4
+* Cleaned up workflow configuration to reference the readme
+* Fixed typos
+
+---
+
+#### v2025.3
+* Fixed issue with tags auto completing
+* Removed subtitle for items in script filter
+* Tweak how tags look in the UI
+* Minor clean up
+
+---
+
+#### v2025.2
+Now you can have multiple url schemes and see found tags in line!
+
+* Changed workflow to use a script filter
+* Added support for multiple url schemes in a yaml config
+* Added some icons
+
+---
+
+#### v2025.1
+This is the initial release.
+
+The workflow defaults to working with Sorted³ out of the box, but it can be customized to use any URL scheme 😊
+
+It allows you to
+
+* specify the tags and related terms in an inline yaml config
+* specify the URL scheme with dynamic placeholders [title], [tags], [today]
+the keyword
+* Tags are added based on the items show up in the query. URLs are ignored.</string>
+	<key>uidata</key>
+	<dict>
+		<key>A13CB0BF-828B-4D76-8461-15D0AAB4EC1C</key>
+		<dict>
+			<key>xpos</key>
+			<real>445</real>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>C54C778B-7BD5-4488-8CB6-17E5E559AFD0</key>
+		<dict>
+			<key>xpos</key>
+			<real>155</real>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>a</string>
+				<key>placeholder</key>
+				<string>a</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Type this phrase to add items</string>
+			<key>label</key>
+			<string>keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>input_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>work 📁:
+  - work
+  - ios
+  - pr
+
+review 👀:
+  - pr
+  - doc
+  - review
+
+Card 💡:
+  - create card
+
+Important 🔺:
+  - '!!'</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>9</integer>
+			</dict>
+			<key>description</key>
+			<string>This a yaml config of tags, where each tag has a list of items that represent the tag
+
+See example in Step 1 👉</string>
+			<key>label</key>
+			<string>Tags</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>input_tags</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>- title: Add to Inbox 📥
+  url: sorted://x-callback-url/add?title=[query]&amp;tags=[tags]&amp;date=[today]
+
+- title: "Search in Sorted³"
+  url: sorted://x-callback-url/open?search=[query]
+  icon: search.png</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>9</integer>
+			</dict>
+			<key>description</key>
+			<string>This a yaml config of url schemes, where each item has a title, url, and (optional) icon path.
+
+See example in Step 2 👉</string>
+			<key>label</key>
+			<string>URL Schemes</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>input_url_scheme_list</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>2025.4</string>
+	<key>webaddress</key>
+	<string>https://jangelsb.github.io</string>
+</dict>
+</plist>
