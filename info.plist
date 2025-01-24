@@ -51,7 +51,7 @@
 	<key>createdby</key>
 	<string>Josh Angelsberg &amp; Ivan Mathy</string>
 	<key>description</key>
-	<string>The ability to run text actions</string>
+	<string>This is as if Boop was made for Alfred.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -281,19 +281,15 @@ function readFile(filePath) {
 	<key>readme</key>
 	<string># Boop for Alfred
 
+For more info check out the repo: TBD
+
+---
+
 Based off of the widely popular https://github.com/IvanMathy/Boop
 
 Quickly run string mutations using the text on your clipboard. This uses all the same scripts from Boop, even reading and parsing the metadata in each script.
 
 This is as if Boop was made for Alfred.
-
----
-
-
-## 🛠️ Installation
-
-1. Download [the latest workflow](TBD/releases) and import it into Alfred. 
-2. Enjoy &amp; God bless!
 
 
 ---
@@ -356,7 +352,7 @@ Outputs the content of the script</string>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Type this phrase to add items</string>
+			<string>Type this phrase to filter commands</string>
 			<key>label</key>
 			<string>keyword</string>
 			<key>type</key>
