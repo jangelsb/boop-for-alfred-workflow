@@ -62,64 +62,15 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Josh Angelsberg &amp; Ivan Mathy</string>
+	<string>Josh Angelsberg</string>
 	<key>description</key>
-	<string>This is as if Boop was made for Alfred.</string>
+	<string>This is as if Boop were made for Alfred.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Boop</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>3</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>{var:input_keyword}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading...</string>
-				<key>script</key>
-				<string>python3 main.py "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Quickly run commands using the text on the clipboard</string>
-				<key>title</key>
-				<string>Boop</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -132,7 +83,10 @@
 
 query = sys.argv[1]
 
-sys.stdout.write(query.strip())</string>
+def strip_last_blank_line_once(text: str) -&gt; str:
+    return text[:-1] if text.endswith("\n") else text
+
+sys.stdout.write(strip_last_blank_line_once(query))</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -307,6 +261,55 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>3</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:input_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python3 main.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Quickly run commands using the text on the clipboard</string>
+				<key>title</key>
+				<string>Boop</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -340,7 +343,7 @@ Quickly run string functions using the text on your clipboard. The output is the
 
 This runs locally in Alfred, using all the same scripts from Boop. It even reads and parses the metadata in each script to allow sorting by the title and tags of a script.
 
-This is as if Boop was made for Alfred.
+This is as if Boop were made for Alfred.
 
 ---
 
@@ -349,6 +352,9 @@ This is as if Boop was made for Alfred.
 
 ### Supports all the scripts from Boop
 ![Commands](images/image1.png)
+
+### Supports filtering based on tags
+![Tags](images/image2.png)
 
 ### Supports your own custom Boop scripts
 * For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
@@ -359,6 +365,11 @@ This is as if Boop was made for Alfred.
 
 
 ## 📝 Version History
+
+#### v2025.2
+* Small fix to only strip a single trailing new line on the output and not the entire output (the goal here is to not create an additional newline, which seems to be added by default)
+
+---
 
 #### v2025.1
 Initial Build
@@ -461,7 +472,7 @@ Outputs the content of the script</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2025.1</string>
+	<string>2025.2</string>
 	<key>webaddress</key>
 	<string>https://jangelsb.github.io</string>
 </dict>

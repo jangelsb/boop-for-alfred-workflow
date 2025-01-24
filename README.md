@@ -6,7 +6,7 @@ Quickly run string functions using the text on your clipboard. The output is the
 
 This runs locally in Alfred, using all the same scripts from Boop. It even reads and parses the metadata in each script to allow sorting by the title and tags of a script.
 
-*This is as if Boop was made for Alfred.*
+*This is as if Boop were made for Alfred.*
 
 ---
 
