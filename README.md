@@ -26,6 +26,6 @@ This is as if Boop was made for Alfred.
 
 ## 🛠️ Installation
 
-1. Download [the latest workflow](TBD/releases) and import it into Alfred. 
+1. Download [the latest workflow](https://github.com/jangelsb/boop-for-alfred-workflow/releases) and import it into Alfred. 
 2. Enjoy & God bless!
 
