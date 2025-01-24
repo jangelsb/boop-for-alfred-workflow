@@ -77,7 +77,7 @@ def generate_list_from_yaml(yaml_string):
 
 def main(query):
     input_url_scheme_list = os.getenv('input_url_scheme_list')
-    input_tags = os.getenv('input_tags')
+    input_tags = '' # os.getenv('input_tags')
 
     url_items = generate_list_from_yaml(input_url_scheme_list)
 
@@ -88,13 +88,16 @@ def main(query):
         matched_tags = tags
         
 
-    output = {"items": []}
+    output = {"items": [], 'variables': {}}
 
     output['items'] += [ResultItem(title=item.title, arg=item.url, icon_path=item.icon).to_dict() for item in url_items]
 
-    found_tags_item = ResultItem(title=f"Tags", arg=None, subtitle=f"{matched_tags}", icon_path="tag.png", valid=False, should_skip_smart_sort=True)
+    # found_tags_item = ResultItem(title=f"Tags", arg=None, subtitle=f"{matched_tags}", icon_path="tag.png", valid=False, should_skip_smart_sort=True)
 
-    output['items'] += [found_tags_item.to_dict()]
+    # output['items'] += [found_tags_item.to_dict()]
+
+
+    output['variables']['input'] = query
 
         
     sys.stdout.write(json.dumps(output))

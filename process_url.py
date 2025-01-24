@@ -45,7 +45,7 @@ def process(query, tags, url_scheme):
     tags_dict = parse_tags(tags)
 
     # Find the matching tags for the query
-    matched_tags = get_matching_tags(query_without_urls, tags_dict)
+    matched_tags = [] # get_matching_tags(query_without_urls, tags_dict)
 
     # Replace placeholders in the URL
     tags_string = ",".join(matched_tags)
