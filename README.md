@@ -6,7 +6,7 @@ Quickly run string functions using the text on your clipboard. The output is the
 
 This runs locally in Alfred, using all the same scripts from Boop. It even reads and parses the metadata in each script to allow sorting by the title and tags of a script.
 
-This is as if Boop was made for Alfred.
+*This is as if Boop was made for Alfred.*
 
 ---
 
@@ -15,6 +15,9 @@ This is as if Boop was made for Alfred.
 
 ### Supports all the scripts from Boop
 ![Commands](images/image1.png)
+
+### Supports filtering based on tags
+![Tags](images/image2.png)
 
 ### Supports your own custom Boop scripts
 * For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
