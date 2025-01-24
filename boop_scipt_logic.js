@@ -11,12 +11,15 @@ function run(argv) {
 
   // State object to pass to the `main` function
   var state = {
-    text: query,
-    fullText: query,
-    selection: query,
-    postError: function (message) {
-      throw new Error(message); // Throw errors if invalid JSON
-    },
+      text: query,
+      fullText: query,
+      selection: query,
+      postError: function (message) {
+        throw new Error(message); // Throw errors if invalid JSON
+      },
+      postInfo: function (message) {
+        this.text += '\n' + message; // Append message to text with a newline
+      },
   };
 
   try {

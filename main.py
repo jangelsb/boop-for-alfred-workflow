@@ -93,13 +93,21 @@ def get_js_files(directory):
 
 def main(query):
     scripts_directory = "./scripts"
+    additional_scripts_directory = "./additional_scripts"
+    input_user_scripts_path = os.getenv('input_user_scripts_path')
+    
     output = {"items": [], "variables": {}}
 
     # Get all .js files in the scripts directory
-    js_files = get_js_files(scripts_directory)
+    js_files1 = get_js_files(scripts_directory)
+    js_files2 = get_js_files(additional_scripts_directory)
+    js_files3 = []
+
+    if input_user_scripts_path: 
+        js_files3 = get_js_files(input_user_scripts_path)
 
     # Extract script info and filter by query in name and tags
-    for js_file in js_files:
+    for js_file in js_files1 + js_files2 + js_files3:
         script_info = extract_script_info(js_file)
         if script_info:
             # Check if the query matches either name or tags (case-insensitive)

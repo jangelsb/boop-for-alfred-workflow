@@ -155,19 +155,28 @@ sys.stdout.write(query.strip())</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>ObjC.import("stdlib")
+				<string>// Requried variables
+// `input`
+// `input_script_path`
+
+// Outputs the content of the script
+
+ObjC.import("stdlib")
 
 function run(argv) {
   var query = $.getenv("input")
 
   // State object to pass to the `main` function
   var state = {
-    text: query,
-    fullText: query,
-    selection: query,
-    postError: function (message) {
-      throw new Error(message); // Throw errors if invalid JSON
-    },
+      text: query,
+      fullText: query,
+      selection: query,
+      postError: function (message) {
+        throw new Error(message); // Throw errors if invalid JSON
+      },
+      postInfo: function (message) {
+        this.text += '\n' + message; // Append message to text with a newline
+      },
   };
 
   try {
@@ -408,6 +417,27 @@ Outputs the content of the script</string>
 			<string>textfield</string>
 			<key>variable</key>
 			<string>input_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Custom scripts folder</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>input_user_scripts_path</string>
 		</dict>
 	</array>
 	<key>version</key>
