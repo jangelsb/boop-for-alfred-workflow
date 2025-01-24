@@ -367,7 +367,7 @@ This is as if Boop were made for Alfred.
 ## 📝 Version History
 
 #### v2025.2
-* Small fix to only strip a single trailing new line on the output and not the entire output (the goal here is to not create an additional newline, which seems to be added by default)
+* Adds a small fix to strip only a single trailing new line from the output and not the entire output (the goal here is to avoid creating an additional newline, which seems to be added by default)
 
 ---
 
