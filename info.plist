@@ -182,9 +182,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>// WORKS!
-
-function run(argv) {
+				<string>function run(argv) {
   var query = argv[0]; // Get the JSON string from the arguments
 
   // State object to pass to the `main` function
@@ -192,15 +190,17 @@ function run(argv) {
     text: query,
     fullText: query,
     selection: query,
-    postError: function(message) {
+    postError: function (message) {
       throw new Error(message); // Throw errors if invalid JSON
-    }
+    },
   };
 
   try {
+    // Inject the custom `require` function
+    var require = createRequire();
+
     // Load the external script
-    // var scriptPath = "./scripts/FormatJSON.js";
-    var scriptPath = "./scripts/FormatXML.js";
+    var scriptPath = "./scripts/Base64Encode.js";
     var scriptContent = readFile(scriptPath);
 
     // Debug: Check the script content
@@ -209,18 +209,30 @@ function run(argv) {
     } else {
       console.log("Script content is empty or undefined.");
     }
-    
-    // Define and execute the `main` function from the cleaned script
-    eval(scriptContent); // This will define `main` in the current scope
 
-    // Now call the main function with the state object
-    if (typeof main === 'function') {
+    // Wrap the script content in a function that has access to `require` and exposes `main`
+    var wrappedScript = `
+      (function(require, state) {
+        ${scriptContent}
+        if (typeof main !== 'function') {
+          throw new Error("The script did not define a 'main' function.");
+        }
+        // Expose main globally
+        this.main = main;
+      })(require, state);
+    `;
+
+    // Execute the wrapped script
+    eval(wrappedScript);
+
+    // Check if the main function was defined
+    if (typeof main === "function") {
       main(state); // Call the main function with the state object
     } else {
       throw new Error("The script did not define the 'main' function.");
     }
 
-    // Return the formatted JSON
+    // Return the formatted text
     return state.text;
   } catch (error) {
     // Return an error message if something goes wrong
@@ -228,12 +240,47 @@ function run(argv) {
   }
 }
 
+// Custom `require` implementation
+function createRequire() {
+  return function (modulePath) {
+    // Replace `@boop/` with the `scripts/lib` path
+    if (modulePath.startsWith("@boop/")) {
+      modulePath = "./scripts/lib/" + modulePath.substring(6) + ".js";
+    } else if (!modulePath.endsWith(".js")) {
+      modulePath += ".js";
+    }
+
+    // Read the module file
+    var scriptContent = readFile(modulePath);
+
+    if (!scriptContent) {
+      throw new Error("Module not found: " + modulePath);
+    }
+
+    // Wrap the code in CommonJS-like structure
+    var module = { exports: {} };
+
+    var wrappedCode = `
+      (function (exports, module) {
+        ${scriptContent}
+      })(module.exports, module);
+    `;
+
+    // Evaluate the wrapped code
+    eval(wrappedCode);
+
+    // Return the module's exports
+    return module.exports;
+  };
+}
+
+// Function to read file content
 function readFile(filePath) {
   var app = Application.currentApplication();
   app.includeStandardAdditions = true;
-  
-  // Run a shell command to read the file content
+
   try {
+    // Use a shell command to read the file content
     var result = app.doShellScript("cat " + filePath);
     return result; // Return the content of the file
   } catch (error) {
