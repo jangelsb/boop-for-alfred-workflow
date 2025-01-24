@@ -1,18 +1,6 @@
 import sys
 import json
 import os
-import yaml
-import urllib.parse
-import re
-from datetime import datetime
-from process_url import process
-
-class URLScheme:
-    def __init__(self, title, urlScheme, url=None, icon=None):
-        self.title = title
-        self.urlScheme = urlScheme
-        self.url = url
-        self.icon = icon
 
 
 class ResultItem:
@@ -21,7 +9,7 @@ class ResultItem:
         self.title = title
         self.arg = arg
         self.subtitle = subtitle
-        self.autocomplete = autocomplete 
+        self.autocomplete = autocomplete
         self.valid = valid
         self.mods = mods if mods else {}
         self.text = text
@@ -56,52 +44,37 @@ class ResultItem:
         return {k: v for k, v in item_dict.items() if v is not None}
 
 
-def generate_list_from_yaml(yaml_string):
-    def entry_processor(entry):
-        title = entry['title']
-        url = entry['url']
-        icon = entry.get('icon', None)
-
-        return URLScheme(title=title, urlScheme=url, icon=icon)
-
-    try:
-        yaml_data = yaml.safe_load(yaml_string)
-        return [entry_processor(entry) for entry in yaml_data]
-    except yaml.YAMLError as e:
-        # print(f"YAML error: {e}")
-        return []
-    except Exception as e:
-        # print(f"An error occurred: {e}")
-        return []
+def get_js_files(directory):
+    # Get all `.js` files in the specified directory, one level deep
+    return [
+        os.path.join(directory, f)
+        for f in os.listdir(directory)
+        if os.path.isfile(os.path.join(directory, f)) and f.endswith(".js")
+    ]
 
 
 def main(query):
-    input_url_scheme_list = os.getenv('input_url_scheme_list')
-    input_tags = '' # os.getenv('input_tags')
+    scripts_directory = "./scripts"
+    output = {"items": [], "variables": {}}
 
-    url_items = generate_list_from_yaml(input_url_scheme_list)
+    # Get all .js files in the scripts directory
+    js_files = get_js_files(scripts_directory)
 
-    matched_tags = None
-    for item in url_items:
-        url, tags = process(query=query, tags=input_tags, url_scheme=item.urlScheme)
-        item.url = url
-        matched_tags = tags
-        
+    # Create ResultItems for each .js file that matches the query
+    for js_file in js_files:
+        title = os.path.basename(js_file)  # File name only
+        if query.lower() in title.lower():  # Case-insensitive query filtering
+            arg = js_file  # Full path
+            result_item = ResultItem(title=title, arg=arg)
+            output["items"].append(result_item.to_dict())
 
-    output = {"items": [], 'variables': {}}
+    # Add the input query to variables
+    output["variables"]["query"] = query
 
-    output['items'] += [ResultItem(title=item.title, arg=item.url, icon_path=item.icon).to_dict() for item in url_items]
-
-    # found_tags_item = ResultItem(title=f"Tags", arg=None, subtitle=f"{matched_tags}", icon_path="tag.png", valid=False, should_skip_smart_sort=True)
-
-    # output['items'] += [found_tags_item.to_dict()]
-
-
-    output['variables']['input'] = query
-
-        
-    sys.stdout.write(json.dumps(output))
+    # Output the JSON for Alfred
+    sys.stdout.write(json.dumps(output, indent=4))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    query = sys.argv[1] if len(sys.argv) > 1 else ""
+    main(query)

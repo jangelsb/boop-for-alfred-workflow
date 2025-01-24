@@ -8,71 +8,6 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>315E9A4F-5505-48C1-8D31-440C74C6BED2</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5606DDD4-F495-43C8-A948-9893C2168D60</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>702F5365-CECC-42DB-BE2A-108DAD734055</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>270E4470-935D-45CB-B762-EE1D9E8E3A82</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>930B89F8-F16C-4732-922B-A6F97E425C73</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>315E9A4F-5505-48C1-8D31-440C74C6BED2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>9347C582-FEEE-4949-99E1-671B8915B812</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5606DDD4-F495-43C8-A948-9893C2168D60</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
 		<array>
 			<dict>
@@ -105,56 +40,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E1E3DA9E-0212-4C81-A996-B8252EFB2F18</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>E1E3DA9E-0212-4C81-A996-B8252EFB2F18</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
 				<string>99CA1911-F083-4604-9D1A-D40DCD09B99E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>63678AB5-6CDF-4538-B66B-70C8A0A9F279</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>930B89F8-F16C-4732-922B-A6F97E425C73</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>D6D73997-D23A-4F23-9468-41428D6ED1D2</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>9347C582-FEEE-4949-99E1-671B8915B812</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>121827A2-FD3A-4C09-A295-EED1C78DD007</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>702F5365-CECC-42DB-BE2A-108DAD734055</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -177,13 +63,34 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>function run(argv) {
-  var query = argv[0]; // Get the JSON string from the arguments
+				<string>ObjC.import("stdlib")
+
+function run(argv) {
+  var query = $.getenv("input")
 
   // State object to pass to the `main` function
   var state = {
@@ -200,7 +107,7 @@
     var require = createRequire();
 
     // Load the external script
-    var scriptPath = "./scripts/Base64Encode.js";
+    var scriptPath = $.getenv("input_script_path")
     var scriptContent = readFile(scriptPath);
 
     // Debug: Check the script content
@@ -304,125 +211,22 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
-				<string>{var:input}</string>
+				<string></string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict/>
+				<dict>
+					<key>input</key>
+					<string>{clipboard}</string>
+					<key>input_script_path</key>
+					<string>{query}</string>
+				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>99CA1911-F083-4604-9D1A-D40DCD09B99E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>1</string>
-						<key>outputlabel</key>
-						<string>1</string>
-						<key>uid</key>
-						<string>63678AB5-6CDF-4538-B66B-70C8A0A9F279</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>2</string>
-						<key>outputlabel</key>
-						<string>2</string>
-						<key>uid</key>
-						<string>D6D73997-D23A-4F23-9468-41428D6ED1D2</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>3</string>
-						<key>outputlabel</key>
-						<string>3</string>
-						<key>uid</key>
-						<string>121827A2-FD3A-4C09-A295-EED1C78DD007</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>4</string>
-						<key>outputlabel</key>
-						<string>4</string>
-						<key>uid</key>
-						<string>F2052E47-AA2F-4B63-8EEF-F83001EF5ED9</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>E1E3DA9E-0212-4C81-A996-B8252EFB2F18</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>tasksettings</key>
-				<dict/>
-				<key>taskuid</key>
-				<string>com.alfredapp.automation.core/text-processing/text.decode.percent</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.automation.task</string>
-			<key>uid</key>
-			<string>315E9A4F-5505-48C1-8D31-440C74C6BED2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -438,7 +242,7 @@ function readFile(filePath) {
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -478,49 +282,13 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:input}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>930B89F8-F16C-4732-922B-A6F97E425C73</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>tasksettings</key>
-				<dict/>
 				<key>taskuid</key>
-				<string>com.alfredapp.automation.core/text-processing/text.encode.percent</string>
+				<string>com.alfredapp.automation.core/macOS/clipboard.export</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.automation.task</string>
 			<key>uid</key>
-			<string>5606DDD4-F495-43C8-A948-9893C2168D60</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:input}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>9347C582-FEEE-4949-99E1-671B8915B812</string>
+			<string>887DF873-BF6E-4C65-895A-116A6CE73A8D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -555,21 +323,6 @@ def trim_whitespace(data):
 			<string>alfred.workflow.utility.debug</string>
 			<key>uid</key>
 			<string>C08DF74C-AAFB-4F41-985F-50D8DB7425D2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>tasksettings</key>
-				<dict/>
-				<key>taskuid</key>
-				<string>com.alfredapp.automation.core/text-processing/text.lines.trim</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.automation.task</string>
-			<key>uid</key>
-			<string>270E4470-935D-45CB-B762-EE1D9E8E3A82</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -618,23 +371,6 @@ def trim_whitespace(data):
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>A6E0859A-C7A2-4944-8503-1D5890712F8A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:input}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>702F5365-CECC-42DB-BE2A-108DAD734055</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -729,57 +465,28 @@ the keyword
 * Tags are added based on the items show up in the query. URLs are ignored.</string>
 	<key>uidata</key>
 	<dict>
-		<key>270E4470-935D-45CB-B762-EE1D9E8E3A82</key>
+		<key>887DF873-BF6E-4C65-895A-116A6CE73A8D</key>
 		<dict>
 			<key>xpos</key>
-			<real>560</real>
+			<real>995</real>
 			<key>ypos</key>
-			<real>480</real>
-		</dict>
-		<key>315E9A4F-5505-48C1-8D31-440C74C6BED2</key>
-		<dict>
-			<key>xpos</key>
-			<real>560</real>
-			<key>ypos</key>
-			<real>225</real>
-		</dict>
-		<key>5606DDD4-F495-43C8-A948-9893C2168D60</key>
-		<dict>
-			<key>xpos</key>
-			<real>560</real>
-			<key>ypos</key>
-			<real>355</real>
-		</dict>
-		<key>702F5365-CECC-42DB-BE2A-108DAD734055</key>
-		<dict>
-			<key>xpos</key>
-			<real>480</real>
-			<key>ypos</key>
-			<real>515</real>
-		</dict>
-		<key>930B89F8-F16C-4732-922B-A6F97E425C73</key>
-		<dict>
-			<key>xpos</key>
-			<real>470</real>
-			<key>ypos</key>
-			<real>255</real>
-		</dict>
-		<key>9347C582-FEEE-4949-99E1-671B8915B812</key>
-		<dict>
-			<key>xpos</key>
-			<real>480</real>
-			<key>ypos</key>
-			<real>380</real>
+			<real>260</real>
 		</dict>
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
 		<dict>
 			<key>xpos</key>
-			<real>485</real>
+			<real>430</real>
 			<key>ypos</key>
 			<real>115</real>
 		</dict>
 		<key>A5B9F109-9A50-4DE3-A6FC-F537819581E7</key>
 		<dict>
+			<key>note</key>
+			<string>Requried variables
+`input`
+`input_script_path`
+
+Outputs the content of the script</string>
 			<key>xpos</key>
 			<real>570</real>
 			<key>ypos</key>
@@ -802,23 +509,16 @@ the keyword
 		<key>D09DD5A9-46D1-4F23-A285-F7A85537551A</key>
 		<dict>
 			<key>xpos</key>
-			<real>30</real>
+			<real>75</real>
 			<key>ypos</key>
-			<real>240</real>
-		</dict>
-		<key>E1E3DA9E-0212-4C81-A996-B8252EFB2F18</key>
-		<dict>
-			<key>xpos</key>
-			<real>280</real>
-			<key>ypos</key>
-			<real>225</real>
+			<real>145</real>
 		</dict>
 		<key>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</key>
 		<dict>
 			<key>xpos</key>
-			<real>775</real>
+			<real>770</real>
 			<key>ypos</key>
-			<real>85</real>
+			<real>70</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
