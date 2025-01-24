@@ -2,7 +2,7 @@
 
 WORKFLOW_FOLDER="$boop_path"
 
-FILES_TO_PUSH=("process_url.py" "process_url_script_filter.py")
+FILES_TO_PUSH=("main.py")
 
 # copy these files to the WORKFLOW_FOLDER
 for FILE in "${FILES_TO_PUSH[@]}"; do

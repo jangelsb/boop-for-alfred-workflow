@@ -86,7 +86,7 @@
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>python3 process_url_script_filter.py "$1"</string>
+				<string>python3 main.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -343,9 +343,9 @@ Outputs the content of the script</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>a</string>
+				<string>b</string>
 				<key>placeholder</key>
-				<string>a</string>
+				<string>b</string>
 				<key>required</key>
 				<true/>
 				<key>trim</key>
