@@ -14,6 +14,11 @@ This is as if Boop was made for Alfred.
 ### Supports all the scripts from Boop
 ![Commands](images/image1.png)
 
+### Supports your own custom Boop scripts
+* For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
+* I have already included all the community scripts listed here: https://github.com/IvanMathy/Boop/tree/main/Scripts
+
+
 ---
 
 

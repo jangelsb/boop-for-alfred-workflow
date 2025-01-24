@@ -330,7 +330,7 @@ function readFile(filePath) {
 	<key>readme</key>
 	<string># Boop for Alfred
 
-For more info check out the repo: TBD
+For more info check out the repo: https://github.com/jangelsb/boop-for-alfred-workflow
 
 ---
 
@@ -340,8 +340,21 @@ Quickly run string mutations using the text on your clipboard. This uses all the
 
 This is as if Boop was made for Alfred.
 
+---
+
+## 🚀 Features
+
+
+### Supports all the scripts from Boop
+![Commands](images/image1.png)
+
+### Supports your own custom Boop scripts
+* For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
+* I have already included all the community scripts listed here: https://github.com/IvanMathy/Boop/tree/main/Scripts
+
 
 ---
+
 
 ## 📝 Version History
 
@@ -431,7 +444,7 @@ Outputs the content of the script</string>
 				<false/>
 			</dict>
 			<key>description</key>
-			<string></string>
+			<string>For more info see 'Supports your own custom Boop scripts` 👉</string>
 			<key>label</key>
 			<string>Custom scripts folder</string>
 			<key>type</key>
