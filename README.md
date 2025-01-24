@@ -2,7 +2,9 @@
 
 Based off of the widely popular https://github.com/IvanMathy/Boop
 
-Quickly run string mutations using the text on your clipboard. This uses all the same scripts from Boop, even reading and parsing the metadata in each script.
+Quickly run string functions using the text on your clipboard. The output is then copied to your clipboard and pasted back into the editor.
+
+This runs locally in Alfred, using all the same scripts from Boop. It even reads and parses the metadata in each script to allow sorting by the title and tags of a script.
 
 This is as if Boop was made for Alfred.
 
@@ -16,7 +18,7 @@ This is as if Boop was made for Alfred.
 
 ### Supports your own custom Boop scripts
 * For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
-* I have already included all the community scripts listed here: https://github.com/IvanMathy/Boop/tree/main/Scripts
+* I have already included all the community scripts listed here (as of Thursday, Jan 23, 2025): https://github.com/IvanMathy/Boop/tree/main/Scripts
 
 
 ---
