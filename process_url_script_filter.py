@@ -97,24 +97,25 @@ def main(query):
     # Get all .js files in the scripts directory
     js_files = get_js_files(scripts_directory)
 
-    # Extract script info and filter by query
+    # Extract script info and filter by query in name and tags
     for js_file in js_files:
         script_info = extract_script_info(js_file)
-        if script_info and query.lower() in script_info.name.lower():
-            result_item = ResultItem(
-                title=script_info.name,
-                arg=script_info.path,
-                subtitle=script_info.tags,
-                # icon_path=f"icons/{script_info.icon}.png" if script_info.icon else None
-            )
-            output["items"].append(result_item.to_dict())
+        if script_info:
+            # Check if the query matches either name or tags (case-insensitive)
+            if query.lower() in script_info.name.lower() or query.lower() in script_info.tags.lower():
+                result_item = ResultItem(
+                    title=script_info.name,
+                    arg=script_info.path,
+                    subtitle=script_info.description,  # Display the description instead of tags in the subtitle
+                    icon_path=f"icons/{script_info.icon}.pdf" if script_info.icon else None
+                )
+                output["items"].append(result_item.to_dict())
 
     # Add the input query to variables
     output["variables"]["query"] = query
 
     # Output the JSON for Alfred
     sys.stdout.write(json.dumps(output, indent=4))
-
 
 if __name__ == "__main__":
     query = sys.argv[1] if len(sys.argv) > 1 else ""

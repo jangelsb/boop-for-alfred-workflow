@@ -34,8 +34,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>A6E0859A-C7A2-4944-8503-1D5890712F8A</key>
-		<array/>
 		<key>D09DD5A9-46D1-4F23-A285-F7A85537551A</key>
 		<array>
 			<dict>
@@ -63,8 +61,57 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>3</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:input_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python3 process_url_script_filter.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Quickly run commands using the text on the clipboard</string>
+				<key>title</key>
+				<string>Boop</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
 				<key>ignoredynamicplaceholders</key>
@@ -230,150 +277,6 @@ function readFile(filePath) {
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>3</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>{var:input_keyword}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading...</string>
-				<key>script</key>
-				<string>python3 process_url_script_filter.py "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Text Actions</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>taskuid</key>
-				<string>com.alfredapp.automation.core/macOS/clipboard.export</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.automation.task</string>
-			<key>uid</key>
-			<string>887DF873-BF6E-4C65-895A-116A6CE73A8D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>import json
-import urllib.parse
-
-def pretty_print_json(data):
-    """Pretty print JSON data."""
-    print(json.dumps(data, indent=4, sort_keys=True))
-
-def url_encode(data):
-    """URL encode a given string."""
-    return urllib.parse.quote(data)
-
-def url_decode(encoded_data):
-    """URL decode a given encoded string."""
-    return urllib.parse.unquote(encoded_data)
-
-def trim_whitespace(data):
-    """Trim whitespace from a string."""
-    return data.strip()</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>C08DF74C-AAFB-4F41-985F-50D8DB7425D2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{
-  "employees": [
-    {
-          "id": 1,
-      "name": "Alice",
-      "age": 30,
-      "email": "alice@example.com",
-      "department": "Engineering"
-    },
-    {
-          "id": 2,
-      "name": "Bob",
-      "age": 25,
-      "email": "bob@example.com",
-      "department": "Marketing"
-    },
-    {
-      "id": 3,
-      "name": "Charlie",
-      "age": 35,
-      "email": "charlie@example.com",
-      "department": "Sales"
-    }
-  ],
-  "company": {
-    "name": "TechCorp",
-    "location": "New York",
-    "founded": 2010
-  },
-  "is_public": true
-}
-</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>A6E0859A-C7A2-4944-8503-1D5890712F8A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string># AutoTagger
@@ -465,19 +368,12 @@ the keyword
 * Tags are added based on the items show up in the query. URLs are ignored.</string>
 	<key>uidata</key>
 	<dict>
-		<key>887DF873-BF6E-4C65-895A-116A6CE73A8D</key>
-		<dict>
-			<key>xpos</key>
-			<real>995</real>
-			<key>ypos</key>
-			<real>260</real>
-		</dict>
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
 		<dict>
 			<key>xpos</key>
-			<real>430</real>
+			<real>325</real>
 			<key>ypos</key>
-			<real>115</real>
+			<real>175</real>
 		</dict>
 		<key>A5B9F109-9A50-4DE3-A6FC-F537819581E7</key>
 		<dict>
@@ -488,23 +384,9 @@ the keyword
 
 Outputs the content of the script</string>
 			<key>xpos</key>
-			<real>570</real>
+			<real>470</real>
 			<key>ypos</key>
-			<real>75</real>
-		</dict>
-		<key>A6E0859A-C7A2-4944-8503-1D5890712F8A</key>
-		<dict>
-			<key>xpos</key>
-			<real>95</real>
-			<key>ypos</key>
-			<real>495</real>
-		</dict>
-		<key>C08DF74C-AAFB-4F41-985F-50D8DB7425D2</key>
-		<dict>
-			<key>xpos</key>
-			<real>770</real>
-			<key>ypos</key>
-			<real>410</real>
+			<real>145</real>
 		</dict>
 		<key>D09DD5A9-46D1-4F23-A285-F7A85537551A</key>
 		<dict>
@@ -516,9 +398,9 @@ Outputs the content of the script</string>
 		<key>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</key>
 		<dict>
 			<key>xpos</key>
-			<real>770</real>
+			<real>735</real>
 			<key>ypos</key>
-			<real>70</real>
+			<real>145</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
