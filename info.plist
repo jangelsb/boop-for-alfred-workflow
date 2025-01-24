@@ -279,93 +279,31 @@ function readFile(filePath) {
 		</dict>
 	</array>
 	<key>readme</key>
-	<string># AutoTagger
+	<string># Boop for Alfred
 
-For more info check out the repo: https://github.com/jangelsb/auto-tagger-alfred-workflow
+Based off of the widely popular https://github.com/IvanMathy/Boop
 
-## 📖 Installation
+Quickly run string mutations using the text on your clipboard. This uses all the same scripts from Boop, even reading and parsing the metadata in each script.
 
-### Step 1: Set up your Tags
-```yaml
-work 📁:
-  - work
-  - ios
-  - pr
+This is as if Boop was made for Alfred.
 
-review 👀:
-  - pr
-  - doc
-  - review
+---
 
-Card 💡:
-  - create card
 
-Important 🔺:
-  - '!!'
+## 🛠️ Installation
 
-```
+1. Download [the latest workflow](TBD/releases) and import it into Alfred. 
+2. Enjoy &amp; God bless!
 
-### Step 2: Set up your URL Schemes
-```yaml
-- title: "Add to inbox 📥" 
-  url: sorted://x-callback-url/add?title=[query]&amp;tags=[tags]&amp;date=[today]
-
-- title: "Add to admin 📁" 
-  url: sorted://x-callback-url/add?title=[query]&amp;tags=[tags]&amp;date=[today]&amp;list=%F0%9F%93%81%20Admin
-
-- title: "Search in Sorted³"
-  url: sorted://x-callback-url/open?search=[query]
-  icon: search.png
-
-```
-
-**Dyanmic variables:**
-- `[query]`
-- `[tags]`
-- `[today]`
-
-**Built in icons:**
-- `tags.png`
-- `search.png`
 
 ---
 
 ## 📝 Version History
 
-#### v2025.4
-* Cleaned up workflow configuration to reference the readme
-* Fixed typos
-
----
-
-#### v2025.3
-* Fixed issue with tags auto completing
-* Removed subtitle for items in script filter
-* Tweak how tags look in the UI
-* Minor clean up
-
----
-
-#### v2025.2
-Now you can have multiple url schemes and see found tags in line!
-
-* Changed workflow to use a script filter
-* Added support for multiple url schemes in a yaml config
-* Added some icons
-
----
-
 #### v2025.1
-This is the initial release.
+* Initial Build
 
-The workflow defaults to working with Sorted³ out of the box, but it can be customized to use any URL scheme 😊
-
-It allows you to
-
-* specify the tags and related terms in an inline yaml config
-* specify the URL scheme with dynamic placeholders [title], [tags], [today]
-the keyword
-* Tags are added based on the items show up in the query. URLs are ignored.</string>
+---</string>
 	<key>uidata</key>
 	<dict>
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
@@ -426,44 +364,9 @@ Outputs the content of the script</string>
 			<key>variable</key>
 			<string>input_keyword</string>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>- title: Format JSON
-  url: '1'
-
-- title: URL Decode Text
-  url: '2'
-
-- title: URL Encode Text
-  url: '3'
-
-- title: Trim Whitespace
-  url: '4'</string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-				<key>verticalsize</key>
-				<integer>9</integer>
-			</dict>
-			<key>description</key>
-			<string>This a yaml config of actions, where each item has a title, url, and (optional) icon path.
-
-See example in Step 2 👉</string>
-			<key>label</key>
-			<string>Actions</string>
-			<key>type</key>
-			<string>textarea</string>
-			<key>variable</key>
-			<string>input_url_scheme_list</string>
-		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>0.2</string>
+	<string>0.3</string>
 	<key>webaddress</key>
 	<string>https://jangelsb.github.io</string>
 </dict>
