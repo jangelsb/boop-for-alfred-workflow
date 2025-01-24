@@ -64,6 +64,7 @@ def extract_script_info(file_path):
     match = re.search(r"/\*\*(.*?)\*\*/", content, re.DOTALL)
     if match:
         header_content = match.group(1).strip()
+        header_content = re.sub(r',\s*}', '}', header_content)  # Remove trailing comma before closing curly brace
         try:
             # Parse the JSON from the header
             metadata = json.loads(header_content)
@@ -76,7 +77,7 @@ def extract_script_info(file_path):
                 path=file_path
             )
         except json.JSONDecodeError:
-            # print(f"Failed to parse JSON header in {file_path}")
+            print(f"Failed to parse JSON header in {file_path}")
             pass
     return None
 

@@ -8,6 +8,19 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
 		<array>
 			<dict>
@@ -25,7 +38,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</string>
+				<string>8CB9B566-A840-4F8E-9599-27A2B0B42D05</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -110,21 +123,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
+				<key>concurrently</key>
 				<false/>
-				<key>transient</key>
-				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+
+query = sys.argv[1]
+
+sys.stdout.write(query.strip())</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>9</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</string>
+			<string>8CB9B566-A840-4F8E-9599-27A2B0B42D05</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -258,6 +279,25 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -302,6 +342,15 @@ This is as if Boop was made for Alfred.
 ---</string>
 	<key>uidata</key>
 	<dict>
+		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
+		<dict>
+			<key>note</key>
+			<string>This is just to trim the whitespace... sad we need this</string>
+			<key>xpos</key>
+			<real>730</real>
+			<key>ypos</key>
+			<real>145</real>
+		</dict>
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
 		<dict>
 			<key>xpos</key>
@@ -329,10 +378,10 @@ Outputs the content of the script</string>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
-		<key>E29FE0F5-96B7-44C0-B3C0-08AFB6944968</key>
+		<key>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</key>
 		<dict>
 			<key>xpos</key>
-			<real>735</real>
+			<real>995</real>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
