@@ -8,11 +8,24 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
+		<key>7E8AD527-3D57-4C5D-8400-10DF8839D12B</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -310,6 +323,39 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>behaviour</key>
+				<integer>0</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>⏎ to copy all and paste · ⎋ to cancel</string>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -366,6 +412,15 @@ This is as if Boop were made for Alfred.
 
 ## 📝 Version History
 
+#### v2025.3
+* Add the ability to view the change before commiting to it
+* Press enter ⏎ to copy and paste the change
+* Press escape ⎋ to cancel
+* You can even manually copy part of it 
+
+---
+
+
 #### v2025.2
 * Adds a small fix to strip only a single trailing new line from the output and not the entire output (the goal here is to avoid creating an additional newline, which seems to be added by default)
 
@@ -382,6 +437,13 @@ Initial Build
 ---</string>
 	<key>uidata</key>
 	<dict>
+		<key>7E8AD527-3D57-4C5D-8400-10DF8839D12B</key>
+		<dict>
+			<key>xpos</key>
+			<real>975</real>
+			<key>ypos</key>
+			<real>145</real>
+		</dict>
 		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
 		<dict>
 			<key>note</key>
@@ -421,7 +483,7 @@ Outputs the content of the script</string>
 		<key>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</key>
 		<dict>
 			<key>xpos</key>
-			<real>995</real>
+			<real>1235</real>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
@@ -472,7 +534,7 @@ Outputs the content of the script</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2025.2</string>
+	<string>2025.3</string>
 	<key>webaddress</key>
 	<string>https://jangelsb.github.io</string>
 </dict>
