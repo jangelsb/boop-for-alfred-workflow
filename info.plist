@@ -8,7 +8,20 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>7E8AD527-3D57-4C5D-8400-10DF8839D12B</key>
+		<key>3D386AAA-BFB1-4899-ABC8-3530993846C1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>507C4D35-3CE5-4B1E-B148-2B885BA428A0</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -21,11 +34,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3D386AAA-BFB1-4899-ABC8-3530993846C1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7E8AD527-3D57-4C5D-8400-10DF8839D12B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>507C4D35-3CE5-4B1E-B148-2B885BA428A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
+				<string>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -87,6 +126,55 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>3</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:input_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python3 main.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Quickly run commands using the text on the clipboard</string>
+				<key>title</key>
+				<string>Boop</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -113,6 +201,39 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 			<string>8CB9B566-A840-4F8E-9599-27A2B0B42D05</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>behaviour</key>
+				<integer>0</integer>
+				<key>fontmode</key>
+				<integer>2</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>⏎ to copy OUTPUT and paste · ⎋ to cancel</string>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -274,88 +395,6 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>3</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>{var:input_keyword}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading...</string>
-				<key>script</key>
-				<string>python3 main.py "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Quickly run commands using the text on the clipboard</string>
-				<key>title</key>
-				<string>Boop</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>0</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string>⏎ to copy all and paste · ⎋ to cancel</string>
-				<key>inputfile</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string></string>
-				<key>outputmode</key>
-				<integer>0</integer>
-				<key>scriptinput</key>
-				<integer>0</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -372,6 +411,72 @@ function readFile(filePath) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>99CA1911-F083-4604-9D1A-D40DCD09B99E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>=========================
+         INPUT          
+=========================
+
+{var:input}
+
+
+
+=========================
+         OUTPUT          
+=========================
+
+{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>3D386AAA-BFB1-4899-ABC8-3530993846C1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>output</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:output}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>507C4D35-3CE5-4B1E-B148-2B885BA428A0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -437,10 +542,31 @@ Initial Build
 ---</string>
 	<key>uidata</key>
 	<dict>
+		<key>3D386AAA-BFB1-4899-ABC8-3530993846C1</key>
+		<dict>
+			<key>xpos</key>
+			<real>1080</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
+		<key>507C4D35-3CE5-4B1E-B148-2B885BA428A0</key>
+		<dict>
+			<key>xpos</key>
+			<real>1470</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
+		<key>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</key>
+		<dict>
+			<key>xpos</key>
+			<real>935</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
 		<key>7E8AD527-3D57-4C5D-8400-10DF8839D12B</key>
 		<dict>
 			<key>xpos</key>
-			<real>975</real>
+			<real>1225</real>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
@@ -483,7 +609,7 @@ Outputs the content of the script</string>
 		<key>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</key>
 		<dict>
 			<key>xpos</key>
-			<real>1235</real>
+			<real>1585</real>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
