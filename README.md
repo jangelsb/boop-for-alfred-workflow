@@ -14,10 +14,13 @@ This runs locally in Alfred, using all the same scripts from Boop. It even reads
 
 
 ### Supports all the scripts from Boop
-![Commands](images/image1.png)
+![Commands](images/image1.webp)
 
 ### Supports filtering based on tags
-![Tags](images/image2.png)
+![Tags](images/image2.webp)
+
+### Shows the input and output in Alfred
+![Output](images/image3.webp)
 
 ### Supports your own custom Boop scripts
 * For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
