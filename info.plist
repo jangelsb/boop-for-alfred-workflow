@@ -250,25 +250,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -407,21 +388,6 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>change.command</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>BDC35612-B939-4A73-8E13-F81D5A7F029C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>behaviour</key>
 				<integer>2</integer>
 				<key>fontmode</key>
@@ -485,6 +451,40 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>change.command</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>BDC35612-B939-4A73-8E13-F81D5A7F029C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -535,39 +535,6 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>output</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>0</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>DD17E711-590B-45FB-8811-A35F7513506E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
 				<string># Input
 
 ```
@@ -598,6 +565,23 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
+				<string>{var:output}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>507C4D35-3CE5-4B1E-B148-2B885BA428A0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
 				<false/>
@@ -619,17 +603,33 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>seconds</key>
+				<string>0</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>DD17E711-590B-45FB-8811-A35F7513506E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
-				<string>{var:output}</string>
+				<string>{query}</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict/>
+				<dict>
+					<key>output</key>
+					<string>{query}</string>
+				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>507C4D35-3CE5-4B1E-B148-2B885BA428A0</string>
+			<string>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -740,6 +740,23 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
+				<string>{var:input}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>A1DB0277-07CE-4B10-9442-32123B16B17A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
 				<false/>
@@ -769,23 +786,6 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:input}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>A1DB0277-07CE-4B10-9442-32123B16B17A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string># Boop for Alfred
@@ -808,10 +808,12 @@ This is as if Boop were made for Alfred.
 
 
 ### Supports all the scripts from Boop
-![Commands](images/image1.png)
 
 ### Supports filtering based on tags
-![Tags](images/image2.png)
+
+### Shows the input and output in Alfred
+
+### Update the command and / or the input inside of Alfred
 
 ### Supports your own custom Boop scripts
 * For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
@@ -1046,7 +1048,7 @@ Outputs the content of the script</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2025.3</string>
+	<string>2025.4</string>
 	<key>webaddress</key>
 	<string>https://jangelsb.github.io</string>
 </dict>

@@ -22,6 +22,9 @@ This runs locally in Alfred, using all the same scripts from Boop. It even reads
 ### Shows the input and output in Alfred
 ![Output](images/image3.webp)
 
+### Update the command and / or the input inside of Alfred
+![Input](images/image4.webp)
+
 ### Supports your own custom Boop scripts
 * For more info see: https://github.com/IvanMathy/Boop/blob/main/Boop/Documentation/CustomScripts.md
 * I have already included all the community scripts listed here (as of Thursday, Jan 23, 2025): https://github.com/IvanMathy/Boop/tree/main/Scripts
