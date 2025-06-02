@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>51C035DA-1517-4790-A8CF-05E64AAB3CD7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0C746834-51F5-486D-9260-1ACB5CBA9635</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</key>
 		<array>
 			<dict>
@@ -43,6 +56,19 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>759527DC-D70C-4CD1-B872-65F2AF3496D4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9222EAB1-D6BF-4834-B61C-23F05F0E8A39</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⏎ to save</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -59,12 +85,45 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>51C035DA-1517-4790-A8CF-05E64AAB3CD7</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⏎ to change command</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A1DB0277-07CE-4B10-9442-32123B16B17A</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>⏎ to update input</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9222EAB1-D6BF-4834-B61C-23F05F0E8A39</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6F6CC4F-C1A3-43CE-930F-39DEF66AA472</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -86,6 +145,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A1DB0277-07CE-4B10-9442-32123B16B17A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BB2D44BA-29C1-431E-B7E2-3D61C040CA67</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A5B9F109-9A50-4DE3-A6FC-F537819581E7</key>
 		<array>
 			<dict>
@@ -99,11 +171,63 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BB2D44BA-29C1-431E-B7E2-3D61C040CA67</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>759527DC-D70C-4CD1-B872-65F2AF3496D4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BDC35612-B939-4A73-8E13-F81D5A7F029C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DD17E711-590B-45FB-8811-A35F7513506E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>D09DD5A9-46D1-4F23-A285-F7A85537551A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>99CA1911-F083-4604-9D1A-D40DCD09B99E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DD17E711-590B-45FB-8811-A35F7513506E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F6455E31-60E2-4D95-96E3-514EBA5585E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A5B9F109-9A50-4DE3-A6FC-F537819581E7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -126,114 +250,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
 				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>3</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>{var:input_keyword}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading...</string>
-				<key>script</key>
-				<string>python3 main.py "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Quickly run commands using the text on the clipboard</string>
-				<key>title</key>
-				<string>Boop</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
+			<string>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>import sys
-
-query = sys.argv[1]
-
-def strip_last_blank_line_once(text: str) -&gt; str:
-    return text[:-1] if text.endswith("\n") else text
-
-sys.stdout.write(strip_last_blank_line_once(query))</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>9</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>8CB9B566-A840-4F8E-9599-27A2B0B42D05</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>0</integer>
-				<key>fontmode</key>
-				<integer>2</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string>⏎ to copy OUTPUT and paste · ⎋ to cancel</string>
-				<key>inputfile</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string></string>
-				<key>outputmode</key>
-				<integer>0</integer>
-				<key>scriptinput</key>
-				<integer>0</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -376,21 +407,192 @@ function readFile(filePath) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
+				<key>availableviaurlhandler</key>
 				<false/>
-				<key>transient</key>
+				<key>triggerid</key>
+				<string>change.command</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>BDC35612-B939-4A73-8E13-F81D5A7F029C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>⏎ to copy &amp; paste output · ⌘⏎ to change command · ⌥⏎ to update input · ⎋ to cancel</string>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
-			<string>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</string>
+			<string>7E8AD527-3D57-4C5D-8400-10DF8839D12B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+
+query = sys.argv[1]
+
+def strip_last_blank_line_once(text: str) -&gt; str:
+    return text[:-1] if text.endswith("\n") else text
+
+sys.stdout.write(strip_last_blank_line_once(query))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8CB9B566-A840-4F8E-9599-27A2B0B42D05</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>3</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:input_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python3 main.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Quickly run commands using the text on the clipboard</string>
+				<key>title</key>
+				<string>Boop</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>output</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>0</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>DD17E711-590B-45FB-8811-A35F7513506E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string># Input
+
+```
+{var:input}
+```
+
+
+# Output
+
+**From** `{var:script_name}`
+
+```
+{query}
+```</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>3D386AAA-BFB1-4899-ABC8-3530993846C1</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -418,55 +620,6 @@ function readFile(filePath) {
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>=========================
-         INPUT          
-=========================
-
-{var:input}
-
-
-
-=========================
-         OUTPUT          
-=========================
-
-{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>3D386AAA-BFB1-4899-ABC8-3530993846C1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>output</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
 				<string>{var:output}</string>
 				<key>passthroughargument</key>
 				<false/>
@@ -477,6 +630,159 @@ function readFile(filePath) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>507C4D35-3CE5-4B1E-B148-2B885BA428A0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>change.command</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>0C746834-51F5-486D-9260-1ACB5CBA9635</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>51C035DA-1517-4790-A8CF-05E64AAB3CD7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>rerun</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>F6455E31-60E2-4D95-96E3-514EBA5585E1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>rerun</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>B6F6CC4F-C1A3-43CE-930F-39DEF66AA472</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>behaviour</key>
+				<integer>1</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>⌘⏎ to save</string>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>759527DC-D70C-4CD1-B872-65F2AF3496D4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>input</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>9222EAB1-D6BF-4834-B61C-23F05F0E8A39</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>0</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>BB2D44BA-29C1-431E-B7E2-3D61C040CA67</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:input}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>A1DB0277-07CE-4B10-9442-32123B16B17A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -517,6 +823,12 @@ This is as if Boop were made for Alfred.
 
 ## 📝 Version History
 
+#### v2025.4
+* Add the ability to change commands and input during confirmation screen
+* Greatly improved the format of the confirmation screen
+
+---
+
 #### v2025.3
 * Add the ability to view the change before commiting to it
 * Press enter ⏎ to copy and paste the change
@@ -542,49 +854,84 @@ Initial Build
 ---</string>
 	<key>uidata</key>
 	<dict>
+		<key>0C746834-51F5-486D-9260-1ACB5CBA9635</key>
+		<dict>
+			<key>xpos</key>
+			<real>1880</real>
+			<key>ypos</key>
+			<real>325</real>
+		</dict>
 		<key>3D386AAA-BFB1-4899-ABC8-3530993846C1</key>
 		<dict>
 			<key>xpos</key>
-			<real>1080</real>
+			<real>1375</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>215</real>
 		</dict>
 		<key>507C4D35-3CE5-4B1E-B148-2B885BA428A0</key>
 		<dict>
 			<key>xpos</key>
-			<real>1470</real>
+			<real>1785</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>215</real>
+		</dict>
+		<key>51C035DA-1517-4790-A8CF-05E64AAB3CD7</key>
+		<dict>
+			<key>xpos</key>
+			<real>1785</real>
+			<key>ypos</key>
+			<real>355</real>
 		</dict>
 		<key>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</key>
 		<dict>
 			<key>xpos</key>
-			<real>935</real>
+			<real>1230</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>215</real>
+		</dict>
+		<key>759527DC-D70C-4CD1-B872-65F2AF3496D4</key>
+		<dict>
+			<key>xpos</key>
+			<real>1525</real>
+			<key>ypos</key>
+			<real>470</real>
 		</dict>
 		<key>7E8AD527-3D57-4C5D-8400-10DF8839D12B</key>
 		<dict>
 			<key>xpos</key>
-			<real>1225</real>
+			<real>1520</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>185</real>
 		</dict>
 		<key>8CB9B566-A840-4F8E-9599-27A2B0B42D05</key>
 		<dict>
 			<key>note</key>
 			<string>This is just to trim the whitespace... sad we need this</string>
 			<key>xpos</key>
-			<real>730</real>
+			<real>1025</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>185</real>
+		</dict>
+		<key>9222EAB1-D6BF-4834-B61C-23F05F0E8A39</key>
+		<dict>
+			<key>xpos</key>
+			<real>1785</real>
+			<key>ypos</key>
+			<real>500</real>
 		</dict>
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
 		<dict>
 			<key>xpos</key>
-			<real>325</real>
+			<real>620</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>215</real>
+		</dict>
+		<key>A1DB0277-07CE-4B10-9442-32123B16B17A</key>
+		<dict>
+			<key>xpos</key>
+			<real>1270</real>
+			<key>ypos</key>
+			<real>500</real>
 		</dict>
 		<key>A5B9F109-9A50-4DE3-A6FC-F537819581E7</key>
 		<dict>
@@ -595,23 +942,62 @@ Initial Build
 
 Outputs the content of the script</string>
 			<key>xpos</key>
-			<real>470</real>
+			<real>785</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>185</real>
+		</dict>
+		<key>B6F6CC4F-C1A3-43CE-930F-39DEF66AA472</key>
+		<dict>
+			<key>xpos</key>
+			<real>1880</real>
+			<key>ypos</key>
+			<real>470</real>
+		</dict>
+		<key>BB2D44BA-29C1-431E-B7E2-3D61C040CA67</key>
+		<dict>
+			<key>note</key>
+			<string>needed to show the Text View</string>
+			<key>xpos</key>
+			<real>1390</real>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>BDC35612-B939-4A73-8E13-F81D5A7F029C</key>
+		<dict>
+			<key>xpos</key>
+			<real>85</real>
+			<key>ypos</key>
+			<real>185</real>
 		</dict>
 		<key>D09DD5A9-46D1-4F23-A285-F7A85537551A</key>
 		<dict>
 			<key>xpos</key>
-			<real>75</real>
+			<real>380</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>185</real>
+		</dict>
+		<key>DD17E711-590B-45FB-8811-A35F7513506E</key>
+		<dict>
+			<key>note</key>
+			<string>needed to show the commands</string>
+			<key>xpos</key>
+			<real>275</real>
+			<key>ypos</key>
+			<real>215</real>
 		</dict>
 		<key>E0643DEB-3B9C-4323-88B8-1D9A4D9336F6</key>
 		<dict>
 			<key>xpos</key>
-			<real>1585</real>
+			<real>1880</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>185</real>
+		</dict>
+		<key>F6455E31-60E2-4D95-96E3-514EBA5585E1</key>
+		<dict>
+			<key>xpos</key>
+			<real>80</real>
+			<key>ypos</key>
+			<real>385</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

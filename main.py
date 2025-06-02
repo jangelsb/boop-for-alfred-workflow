@@ -38,7 +38,8 @@ class ResultItem:
             "autocomplete": self.autocomplete,
             "valid": self.valid,
             "type": self.type if self.type else "default",
-            "quicklookurl": self.quicklookurl
+            "quicklookurl": self.quicklookurl,
+            "variables": {"script_name": self.title}
         }
         if self.mods:
             item_dict["mods"] = {mod.key.value: mod.to_dict()[mod.key.value] for mod in self.mods if mod.key is not None}
