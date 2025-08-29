@@ -21,6 +21,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>498FC56E-FF0F-4CFC-9132-6EF56415ABB4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D09DD5A9-46D1-4F23-A285-F7A85537551A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>507C4D35-3CE5-4B1E-B148-2B885BA428A0</key>
 		<array>
 			<dict>
@@ -39,6 +52,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>0C746834-51F5-486D-9260-1ACB5CBA9635</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>56B12105-4A27-4430-ABB7-7A040E95C7C9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>79666DD7-D4D5-4D46-9EC0-C6FC8FA2E5EC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -69,6 +95,19 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>⏎ to save</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>79666DD7-D4D5-4D46-9EC0-C6FC8FA2E5EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>498FC56E-FF0F-4CFC-9132-6EF56415ABB4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -647,6 +686,8 @@ if __name__ == "__main__":
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Quickly run commands using the text on the clipboard</string>
 				<key>title</key>
@@ -918,6 +959,66 @@ if __name__ == "__main__":
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<true/>
+				<key>acceptsurls</key>
+				<true/>
+				<key>name</key>
+				<string>Boop</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>56B12105-4A27-4430-ABB7-7A040E95C7C9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>79666DD7-D4D5-4D46-9EC0-C6FC8FA2E5EC</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>input</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>498FC56E-FF0F-4CFC-9132-6EF56415ABB4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Boop for Alfred
@@ -1002,6 +1103,13 @@ Initial Build
 			<key>ypos</key>
 			<real>215</real>
 		</dict>
+		<key>498FC56E-FF0F-4CFC-9132-6EF56415ABB4</key>
+		<dict>
+			<key>xpos</key>
+			<real>420</real>
+			<key>ypos</key>
+			<real>550</real>
+		</dict>
 		<key>507C4D35-3CE5-4B1E-B148-2B885BA428A0</key>
 		<dict>
 			<key>xpos</key>
@@ -1016,6 +1124,13 @@ Initial Build
 			<key>ypos</key>
 			<real>355</real>
 		</dict>
+		<key>56B12105-4A27-4430-ABB7-7A040E95C7C9</key>
+		<dict>
+			<key>xpos</key>
+			<real>80</real>
+			<key>ypos</key>
+			<real>520</real>
+		</dict>
 		<key>5D8080C8-E3DD-4F57-9BC2-5A8C642D1915</key>
 		<dict>
 			<key>xpos</key>
@@ -1029,6 +1144,13 @@ Initial Build
 			<real>1525</real>
 			<key>ypos</key>
 			<real>470</real>
+		</dict>
+		<key>79666DD7-D4D5-4D46-9EC0-C6FC8FA2E5EC</key>
+		<dict>
+			<key>xpos</key>
+			<real>255</real>
+			<key>ypos</key>
+			<real>520</real>
 		</dict>
 		<key>7E8AD527-3D57-4C5D-8400-10DF8839D12B</key>
 		<dict>
@@ -1056,7 +1178,7 @@ Initial Build
 		<key>99CA1911-F083-4604-9D1A-D40DCD09B99E</key>
 		<dict>
 			<key>xpos</key>
-			<real>620</real>
+			<real>675</real>
 			<key>ypos</key>
 			<real>215</real>
 		</dict>
@@ -1106,7 +1228,7 @@ Outputs the content of the script</string>
 		<key>D09DD5A9-46D1-4F23-A285-F7A85537551A</key>
 		<dict>
 			<key>xpos</key>
-			<real>380</real>
+			<real>445</real>
 			<key>ypos</key>
 			<real>185</real>
 		</dict>
@@ -1115,7 +1237,7 @@ Outputs the content of the script</string>
 			<key>note</key>
 			<string>needed to show the commands</string>
 			<key>xpos</key>
-			<real>275</real>
+			<real>285</real>
 			<key>ypos</key>
 			<real>215</real>
 		</dict>
@@ -1131,7 +1253,7 @@ Outputs the content of the script</string>
 			<key>xpos</key>
 			<real>80</real>
 			<key>ypos</key>
-			<real>385</real>
+			<real>355</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
