@@ -317,7 +317,7 @@ function run(argv) {
     }
 
     // Return the formatted text
-    return state.text;
+    return state.fullText !== query ? state.fullText : state.text;
   } catch (error) {
     // Return an error message if something goes wrong
     return "Error: " + error.message;
@@ -564,13 +564,17 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>seconds</key>
-				<string>0</string>
+				<key>argument</key>
+				<string>{var:output}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>DD17E711-590B-45FB-8811-A35F7513506E</string>
+			<string>507C4D35-3CE5-4B1E-B148-2B885BA428A0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -599,17 +603,13 @@ sys.stdout.write(strip_last_blank_line_once(query))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:output}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
+				<key>seconds</key>
+				<string>0</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.utility.delay</string>
 			<key>uid</key>
-			<string>507C4D35-3CE5-4B1E-B148-2B885BA428A0</string>
+			<string>DD17E711-590B-45FB-8811-A35F7513506E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1047,6 +1047,8 @@ Outputs the content of the script</string>
 			<string>input_user_scripts_path</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>2025.4</string>
 	<key>webaddress</key>
