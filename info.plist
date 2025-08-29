@@ -1061,6 +1061,7 @@ This is as if Boop were made for Alfred.
 #### v2025.5
 * Added a new Universal Action - quickly run boop commands from the clipboard manager!
 * Added a new 'Trim Code' script that removes extra indentation but keeps the original code structure
+* Fixed a small issue where scripts that used `fullText` didn't work
 * Moved the main.py script to be inline in Alfred to fix some potential python runtime issues
 
 ---
