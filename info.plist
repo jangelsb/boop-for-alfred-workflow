@@ -1058,6 +1058,13 @@ This is as if Boop were made for Alfred.
 
 ## 📝 Version History
 
+#### v2025.5
+* Added a new Universal Action - quickly run boop commands from the clipboard manager!
+* Added a new 'Trim Code' script that removes extra indentation but keeps the original code structure
+* Moved the main.py script to be inline in Alfred to fix some potential python runtime issues
+
+---
+
 #### v2025.4
 * Adds the ability to change commands and input during the confirmation screen
 * Greatly improves the format of the confirmation screen
@@ -1071,7 +1078,6 @@ This is as if Boop were made for Alfred.
 * You can even manually copy part of it 
 
 ---
-
 
 #### v2025.2
 * Adds a small fix to strip only a single trailing new line from the output and not the entire output (the goal here is to avoid creating an additional newline, which seems to be added by default)
@@ -1301,10 +1307,8 @@ Outputs the content of the script</string>
 			<string>input_user_scripts_path</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>2025.4</string>
+	<string>2025.5</string>
 	<key>webaddress</key>
 	<string>https://jangelsb.github.io</string>
 </dict>
