@@ -2,115 +2,96 @@
 // `input`
 // `input_script_path`
 
-// Outputs the content of the script
+ObjC.import('stdlib')
 
-ObjC.import("stdlib")
+// JXA eval() only sees file-level variables, not locals inside run()
+var boopRequire
+var boopState
 
-function run(argv) {
-  var query = $.getenv("input")
+function run (argv) {
+  var query = $.getenv('input')
 
-  // State object to pass to the `main` function
-  var state = {
-      text: query,
-      fullText: query,
-      selection: query,
-      postError: function (message) {
-        throw new Error(message); // Throw errors if invalid JSON
-      },
-      postInfo: function (message) {
-        this.text += '\n' + message; // Append message to text with a newline
-      },
-  };
+  boopState = {
+    text: query,
+    fullText: query,
+    selection: query,
+    postError: function (message) {
+      throw new Error(message)
+    },
+    postInfo: function (message) {
+      this.text += '\n' + message
+    }
+  }
 
   try {
-    // Inject the custom `require` function
-    var require = createRequire();
+    boopRequire = createRequire()
 
-    // Load the external script
-    var scriptPath = $.getenv("input_script_path")
-    var scriptContent = readFile(scriptPath);
+    var scriptPath = $.getenv('input_script_path')
+    var scriptContent = readFile(scriptPath)
 
-    // Debug: Check the script content
-    if (scriptContent) {
-      console.log("Script content loaded successfully.");
-    } else {
-      console.log("Script content is empty or undefined.");
+    if (!scriptContent) {
+      throw new Error('Script content is empty or undefined.')
     }
 
-    // Wrap the script content in a function that has access to `require` and exposes `main`
     var wrappedScript = `
       (function(require, state) {
         ${scriptContent}
         if (typeof main !== 'function') {
           throw new Error("The script did not define a 'main' function.");
         }
-        // Expose main globally
         this.main = main;
-      })(require, state);
-    `;
+      })(boopRequire, boopState);
+    `
 
-    // Execute the wrapped script
-    eval(wrappedScript);
+    eval(wrappedScript)
 
-    // Check if the main function was defined
-    if (typeof main === "function") {
-      main(state); // Call the main function with the state object
+    if (typeof main === 'function') {
+      main(boopState)
     } else {
-      throw new Error("The script did not define the 'main' function.");
+      throw new Error("The script did not define the 'main' function.")
     }
 
-    // Return the formatted text
-    return state.text;
+    return boopState.fullText !== query ? boopState.fullText : boopState.text
   } catch (error) {
-    // Return an error message if something goes wrong
-    return "Error: " + error.message;
+    return 'Error: ' + error.message
   }
 }
 
-// Custom `require` implementation
-function createRequire() {
+function createRequire () {
   return function (modulePath) {
-    // Replace `@boop/` with the `scripts/lib` path
-    if (modulePath.startsWith("@boop/")) {
-      modulePath = "./scripts/lib/" + modulePath.substring(6) + ".js";
-    } else if (!modulePath.endsWith(".js")) {
-      modulePath += ".js";
+    if (modulePath.startsWith('@boop/')) {
+      modulePath = './scripts/lib/' + modulePath.substring(6) + '.js'
+    } else if (!modulePath.endsWith('.js')) {
+      modulePath += '.js'
     }
 
-    // Read the module file
-    var scriptContent = readFile(modulePath);
+    var scriptContent = readFile(modulePath)
 
     if (!scriptContent) {
-      throw new Error("Module not found: " + modulePath);
+      throw new Error('Module not found: ' + modulePath)
     }
 
-    // Wrap the code in CommonJS-like structure
-    var module = { exports: {} };
+    var module = { exports: {} }
 
     var wrappedCode = `
-      (function (exports, module) {
+      (function (exports, module, require) {
         ${scriptContent}
-      })(module.exports, module);
-    `;
+      })(module.exports, module, boopRequire);
+    `
 
-    // Evaluate the wrapped code
-    eval(wrappedCode);
+    eval(wrappedCode)
 
-    // Return the module's exports
-    return module.exports;
-  };
+    return module.exports
+  }
 }
 
-// Function to read file content
-function readFile(filePath) {
-  var app = Application.currentApplication();
-  app.includeStandardAdditions = true;
+function readFile (filePath) {
+  var app = Application.currentApplication()
+  app.includeStandardAdditions = true
 
   try {
-    // Use a shell command to read the file content
-    var result = app.doShellScript("cat " + filePath);
-    return result; // Return the content of the file
+    return app.doShellScript('cat ' + filePath)
   } catch (error) {
-    throw new Error("Unable to read file at: " + filePath);
+    throw new Error('Unable to read file at: ' + filePath)
   }
 }
