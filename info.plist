@@ -352,27 +352,16 @@ function run(argv) {
       console.log("Script content is empty or undefined.");
     }
 
-    // Wrap the script content in a function that has access to `require` and exposes `main`
-    var wrappedScript = `
-      (function(require, state) {
-        ${scriptContent}
-        if (typeof main !== 'function') {
-          throw new Error("The script did not define a 'main' function.");
-        }
-        // Expose main globally
-        this.main = main;
-      })(require, state);
-    `;
+    // Compile the script with `new Function` instead of eval so `require` and
+    // `state` are passed in explicitly (macOS Tahoe's JXA runs eval'd code in
+    // global scope, where function locals like `require` are not visible)
+    var makeMain = new Function("require", "state", scriptContent +
+      '\nif (typeof main !== "function") { throw new Error("The script did not define a \'main\' function."); }' +
+      '\nreturn main;');
 
-    // Execute the wrapped script
-    eval(wrappedScript);
-
-    // Check if the main function was defined
-    if (typeof main === "function") {
-      main(state); // Call the main function with the state object
-    } else {
-      throw new Error("The script did not define the 'main' function.");
-    }
+    // Get the script's main function and call it with the state object
+    var main = makeMain(require, state);
+    main(state);
 
     // Return the formatted text
     return state.fullText !== query ? state.fullText : state.text;
@@ -384,7 +373,7 @@ function run(argv) {
 
 // Custom `require` implementation
 function createRequire() {
-  return function (modulePath) {
+  var requireFn = function (modulePath) {
     // Replace `@boop/` with the `scripts/lib` path
     if (modulePath.startsWith("@boop/")) {
       modulePath = "./scripts/lib/" + modulePath.substring(6) + ".js";
@@ -402,18 +391,15 @@ function createRequire() {
     // Wrap the code in CommonJS-like structure
     var module = { exports: {} };
 
-    var wrappedCode = `
-      (function (exports, module) {
-        ${scriptContent}
-      })(module.exports, module);
-    `;
-
-    // Evaluate the wrapped code
-    eval(wrappedCode);
+    // Compile with `new Function` (see note in run()); passing `require` also
+    // lets modules require other modules
+    var factory = new Function("exports", "module", "require", scriptContent);
+    factory(module.exports, module, requireFn);
 
     // Return the module's exports
     return module.exports;
   };
+  return requireFn;
 }
 
 // Function to read file content
