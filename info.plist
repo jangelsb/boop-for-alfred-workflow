@@ -1044,6 +1044,11 @@ This is as if Boop were made for Alfred.
 
 ## 📝 Version History
 
+#### v2026.1
+* Includes @landon8848 fix for "Can't find variable: require" on macOS Tahoe - thanks!
+
+---
+
 #### v2025.5
 * Added a new Universal Action - quickly run boop commands from the clipboard manager!
 * Added a new 'Trim Code' script that removes extra indentation but keeps the original code structure
@@ -1295,7 +1300,7 @@ Outputs the content of the script</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2025.5</string>
+	<string>2026.1</string>
 	<key>webaddress</key>
 	<string>https://jangelsb.github.io</string>
 </dict>

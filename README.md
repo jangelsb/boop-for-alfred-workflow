@@ -44,6 +44,11 @@ This runs locally in Alfred, using all the same scripts from Boop. It even reads
 
 ## 📝 Version History
 
+#### v2026.1
+* Includes @landon8848 fix for "Can't find variable: require" on macOS Tahoe - thanks!
+
+---
+
 #### v2025.3
 * Add the ability to view the change before commiting to it
 * Press enter ⏎ to copy and paste the change
